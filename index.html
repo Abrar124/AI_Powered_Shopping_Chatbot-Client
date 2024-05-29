@@ -3,12 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Shopping Assistant Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI-Powered Shopping Assistant</title>
     <style>
         /* Custom styles for Dialogflow Messenger */
         df-messenger {
-            --df-messenger-height: 600px;
+            --df-messenger-minimized-height: 60px;
+            /* Height when minimized */
+            --df-messenger-chat-height: 40px;
+            /* Height when chat is open */
             /* Adjust this value as needed */
             --df-messenger-bot-message: #e0e0e0;
             --df-messenger-user-message: #007bff;
@@ -17,28 +20,42 @@
             --df-messenger-chat-background-color: #ffffff;
         }
 
-        /* Additional styling to center the container */
         .container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
             height: 100vh;
+            /* text-align: center; */
         }
 
-        div.chat-wrapper[opened="true"] {
-            height: 480px !important;
-            opacity: 1;
-            transform: translate3d(0px, 0px, 0px) scale(1, 1);
-            transition: transform 0.2s ease, opacity 0.2s ease-in;
+        .features {
+            margin-bottom: 20px;
+        }
+
+        div.chat-wrapper {
+            height: 80vh !important;
+        }
+
+        h1 {
+            font-size: 8vh;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div style="margin-left:20vh ;">
+            <h1>AI-Powered Shopping Assistant</h1>
+            <div class="features">
+                <p>1. Enjoy a seamless and interactive shopping experience in once place.</p>
+                <p>2. Get personalized product suggestions based on your location, budget, and preferences.</p>
+                <p>3. Save time and effort by finding the best products effortlessly.</p>
+            </div>
+        </div>
         <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-        <df-messenger intent="WELCOME" chat-title="Shopping_Assistant_Chatbot"
-            agent-id="6252f194-9e13-4fb9-8d24-1e22d3923831" language-code="en"></df-messenger>
+        <df-messenger intent="WELCOME" chat-title="AI-Powered Shopping Assistant"
+            chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbot-5f82e.appspot.com/o/chatbot.png?alt=media&token=6fb03b32-fe1d-403d-a922-6d48e72702a8"
+            agent-id="6252f194-9e13-4fb9-8d24-1e22d3923831" expand="true" language-code="en"></df-messenger>
     </div>
 </body>
 
